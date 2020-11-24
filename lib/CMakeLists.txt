@@ -1,0 +1,6 @@
+aux_source_directory(. DIR_LIB_SRCS)
+MESSAGE("building library for  perftest ... ")
+add_library(dynamic_perftest SHARED ${DIR_LIB_SRCS} )
+add_library(static_perftest STATIC ${DIR_LIB_SRCS} )
+target_link_libraries(dynamic_perftest ibverbs)
+target_link_libraries(static_perftest ibverbs)
